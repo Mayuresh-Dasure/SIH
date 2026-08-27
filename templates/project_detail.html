@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+{% block title %}{{ project.project_name }} — MPLADS AI Monitor{% endblock %}
+
+{% block content %}
+<section class="detail-section">
+    <!-- Back button -->
+    <a href="/" class="back-link" id="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Back to Dashboard
+    </a>
+
+    <div class="detail-grid">
+        <!-- Left Column: Project Info & Deep Dives -->
+        <div class="detail-left">
+            <!-- Project Header Card -->
+            <div class="panel detail-info-panel">
+                <div class="detail-header">
+                    <div>
+                        <span class="detail-project-id">Work ID: #{{ project.id }}</span>
+                        <h2 class="detail-title">{{ project.project_name }}</h2>
+                    </div>
+                    <div class="detail-status-badges">
+                        <span class="status-badge status-{{ project.status|lower|replace(' ', '-') }}">{{ project.status }}</span>
+                        {% if project.compliance_status == 'PASSED' %}
+                        <span class="comp-badge comp-badge-pass">✓ Compliant</span>
+                        {% elif project.compliance_status == 'WARNING' %}
+                        <span class="comp-badge comp-badge-warn">⚠ Compliance Warning</span>
+                        {% else %}
+                        <span class="comp-badge comp-badge-fail">✕ Compliance Violation</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="detail-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">{{ project.category }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Member of Parliament</span>
+                        <span class="meta-value">{{ project.mp_name }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Constituency & District</span>
+                        <span class="meta-value">{{ project.constituency }} • {{ project.district }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Implementing Agency</span>
+                        <span class="meta-value">{{ project.implementing_agency or 'N/A' }} ({{ project.agency_type }})</span>
+                    </div>
+                </div>
+
+                <hr class="detail-divider">
+
+                <!-- Financial Details -->
+                <div class="detail-financials">
+                    <h3 class="detail-section-title">Financial Flow & Utilization</h3>
+                    <div class="financial-grid">
+                        <div class="financial-item">
+                            <span class="financial-label">Sanctioned Amount</span>
+                            <span class="financial-value financial-sanctioned">₹{{ "%.2f"|format(project.sanctioned_amount) }} Lakhs</span>
+                        </div>
+                        <div class="financial-item">
+                            <span class="financial-label">Expenditure</span>
+                            <span class="financial-value financial-expenditure">₹{{ "%.2f"|format(project.expenditure) }} Lakhs</span>
+                        </div>
+                        <div class="financial-item">
+                            <span class="financial-label">Utilization</span>
+                            <span class="financial-value">{{ project.utilization_pct }}%</span>
+                        </div>
+                    </div>
+                    <div class="utilization-bar-container">
+                        <div class="utilization-bar">
+                            <div class="utilization-fill" style="width: {{ project.utilization_pct }}%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="detail-divider">
+
+                <!-- Timeline Details -->
+                <div class="detail-timeline">
+                    <h3 class="detail-section-title">Statutory Timeline Audit</h3>
+                    <div class="timeline-grid">
+                        <div class="timeline-item">
+                            <span class="timeline-label">Recommendation Date</span>
+                            <span class="timeline-value">{{ project.recommendation_date or project.start_date or 'N/A' }}</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-label">Sanction Date</span>
+                            <span class="timeline-value">{{ project.sanction_date or 'N/A' }}</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-label">Expected Completion</span>
+                            <span class="timeline-value">{{ project.expected_completion or 'N/A' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statutory Compliance Checklist Card -->
+            <div class="panel compliance-checklist-panel">
+                <h3 class="panel-title">📋 Statutory Compliance Rule Audit</h3>
+                <div class="compliance-flags-list">
+                    {% for flag in project.compliance_flags %}
+                    <div class="compliance-flag-item {% if 'VIOLATION' in flag %}comp-item-fail{% elif 'WARNING' in flag %}comp-item-warn{% else %}comp-item-pass{% endif %}">
+                        <span class="flag-icon">
+                            {% if 'VIOLATION' in flag %}✕{% elif 'WARNING' in flag %}⚠{% else %}✓{% endif %}
+                        </span>
+                        <span class="flag-text">{{ flag }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Predictive Early Warning Card -->
+            <div class="panel early-warning-panel">
+                <h3 class="panel-title">🔮 Predictive Early Warning Forecast</h3>
+                <div class="early-warning-grid">
+                    <div class="ew-metric">
+                        <span class="ew-label">Early Warning Level</span>
+                        <span class="ew-badge ew-{{ project.early_warning_level|lower }}">{{ project.early_warning_level }}</span>
+                    </div>
+                    <div class="ew-metric">
+                        <span class="ew-label">Projected Milestone Delay</span>
+                        <span class="ew-value {% if project.predicted_delay_months > 2 %}ew-val-high{% endif %}">
+                            +{{ project.predicted_delay_months }} Months
+                        </span>
+                    </div>
+                    <div class="ew-metric">
+                        <span class="ew-label">Projected FY Shortfall</span>
+                        <span class="ew-value">₹{{ "%.2f"|format(project.projected_shortfall) }} Lakhs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duplicate Works Card (If applicable) -->
+            {% if project.duplicate_flag and project.duplicate_flag|length > 0 %}
+            <div class="panel duplicate-warning-panel">
+                <h3 class="panel-title">⚠️ Potential Duplicate / Overlapping Work Detected</h3>
+                {% for dup in project.duplicate_flag %}
+                <div class="dup-alert-box">
+                    <p><strong>Overlapping Project:</strong> <a href="/project/{{ dup.matched_project_id }}">#{{ dup.matched_project_id }} — {{ dup.matched_project_name }}</a></p>
+                    <p><strong>Proximity:</strong> {{ dup.distance_meters }} meters away • <strong>Token Overlap:</strong> {{ dup.similarity_pct }}%</p>
+                    <span class="dup-reason">{{ dup.reason }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Mini Map -->
+            {% if project.latitude and project.longitude %}
+            <div class="panel detail-map-panel">
+                <h3 class="panel-title">Geospatial Site Location</h3>
+                <div id="detail-map" class="detail-map-container"
+                     data-lat="{{ project.latitude }}"
+                     data-lng="{{ project.longitude }}"
+                     data-name="{{ project.project_name }}"></div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Right Column: AI Risk Score & Auditor Feedback -->
+        <div class="detail-right">
+            <!-- AI Risk Score Panel -->
+            <div class="panel risk-assessment-panel">
+                <h3 class="panel-title">AI Risk Intelligence</h3>
+
+                <!-- Risk Gauge -->
+                <div class="risk-gauge-container">
+                    <div class="risk-gauge">
+                        <svg viewBox="0 0 200 120" class="gauge-svg">
+                            <path d="M 20 100 A 80 80 0 0 1 180 100"
+                                  fill="none"
+                                  stroke="rgba(255,255,255,0.08)"
+                                  stroke-width="12"
+                                  stroke-linecap="round"/>
+                            <path d="M 20 100 A 80 80 0 0 1 180 100"
+                                  fill="none"
+                                  stroke="{{ project.risk_color }}"
+                                  stroke-width="12"
+                                  stroke-linecap="round"
+                                  class="gauge-fill"
+                                  id="gauge-fill"
+                                  data-score="{{ project.risk_score }}"
+                                  style="stroke-dasharray: 251; stroke-dashoffset: 251;"/>
+                        </svg>
+                        <div class="gauge-center">
+                            <span class="gauge-score" style="color: {{ project.risk_color }}">{{ project.risk_score|int }}</span>
+                            <span class="gauge-label">/ 100</span>
+                        </div>
+                    </div>
+                    <div class="risk-tier-badge" style="background: {{ project.risk_color }}20; color: {{ project.risk_color }}; border: 1px solid {{ project.risk_color }}40;">
+                        {{ project.risk_tier }}
+                    </div>
+                </div>
+
+                <!-- Anomaly Reasons -->
+                {% if project.risk_reasons %}
+                <div class="risk-reasons">
+                    <h4 class="risk-reasons-title">Explainable Anomaly Signals</h4>
+                    <ul class="reasons-list">
+                        {% for reason in project.risk_reasons %}
+                        <li class="reason-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ project.risk_color }}" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                            <span>{{ reason }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% else %}
+                <div class="risk-reasons risk-reasons-clean">
+                    <div class="clean-badge">
+                        <span>✓ No statistical anomalies detected.</span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Auditor Ground Feedback Card (Active Learning) -->
+            <div class="panel audit-feedback-panel" id="audit-feedback-card">
+                <h3 class="panel-title">🕵️ Ground Auditor Feedback</h3>
+                <p class="audit-card-sub">Record physical inspection findings to calibrate AI confidence.</p>
+
+                <div class="feedback-btn-group">
+                    <button class="btn btn-verdict btn-confirm" data-verdict="CONFIRMED">
+                        ✓ Confirm Irregularity
+                    </button>
+                    <button class="btn btn-verdict btn-false-pos" data-verdict="FALSE_POSITIVE">
+                        ✕ False Positive
+                    </button>
+                    <button class="btn btn-verdict btn-review" data-verdict="UNDER_INVESTIGATION">
+                        ⏳ Under Review
+                    </button>
+                </div>
+
+                <div class="feedback-notes-wrapper">
+                    <textarea id="auditor-notes" class="filter-input" rows="3" placeholder="Enter inspection notes or justification..."></textarea>
+                    <button class="btn btn-submit-feedback" id="btn-save-feedback" data-project-id="{{ project.id }}">
+                        Submit Audit Verdict
+                    </button>
+                </div>
+                <div id="feedback-result-msg" class="feedback-msg" style="display: none;"></div>
+
+                <!-- Audit History -->
+                {% if project.audit_history and project.audit_history|length > 0 %}
+                <div class="audit-history-box">
+                    <h4 class="history-title">Previous Inspections</h4>
+                    {% for h in project.audit_history %}
+                    <div class="history-item">
+                        <span class="hist-verdict hist-{{ h.verdict|lower }}">{{ h.verdict }}</span>
+                        <span class="hist-by">{{ h.auditor_name }} ({{ h.created_at[:10] }})</span>
+                        {% if h.notes %}<p class="hist-notes">"{{ h.notes }}"</p>{% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Map
+        const mapEl = document.getElementById('detail-map');
+        if (mapEl) {
+            const lat = parseFloat(mapEl.dataset.lat);
+            const lng = parseFloat(mapEl.dataset.lng);
+            const name = mapEl.dataset.name;
+
+            const map = L.map('detail-map').setView([lat, lng], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            const riskScore = {{ project.risk_score }};
+            let color = '#10b981';
+            if (riskScore > 60) color = '#ef4444';
+            else if (riskScore > 30) color = '#f59e0b';
+
+            L.circleMarker([lat, lng], {
+                radius: 10,
+                fillColor: color,
+                color: color,
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.7
+            }).addTo(map).bindPopup(`<b>${name}</b><br>Risk Score: ${riskScore}`).openPopup();
+        }
+
+        // Animate gauge
+        const gaugeFill = document.getElementById('gauge-fill');
+        if (gaugeFill) {
+            const score = parseInt(gaugeFill.dataset.score);
+            const totalLength = 251;
+            const offset = totalLength - (totalLength * score / 100);
+            setTimeout(() => {
+                gaugeFill.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                gaugeFill.style.strokeDashoffset = offset;
+            }, 300);
+        }
+
+        // Audit Feedback Handling
+        let selectedVerdict = 'CONFIRMED';
+        document.querySelectorAll('.btn-verdict').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.btn-verdict').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedVerdict = btn.dataset.verdict;
+            });
+        });
+        document.querySelector('.btn-verdict[data-verdict="CONFIRMED"]')?.classList.add('active');
+
+        document.getElementById('btn-save-feedback')?.addEventListener('click', () => {
+            const projectId = document.getElementById('btn-save-feedback').dataset.projectId;
+            const notes = document.getElementById('auditor-notes').value.trim();
+            const msgEl = document.getElementById('feedback-result-msg');
+
+            fetch('/api/audit-feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    project_id: parseInt(projectId),
+                    auditor_name: 'District Ground Inspector',
+                    role: 'District Authority',
+                    verdict: selectedVerdict,
+                    notes: notes
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                msgEl.style.display = 'block';
+                msgEl.textContent = '✓ ' + data.message;
+                msgEl.className = 'feedback-msg msg-success';
+                setTimeout(() => window.location.reload(), 1200);
+            })
+            .catch(err => {
+                msgEl.style.display = 'block';
+                msgEl.textContent = 'Failed to submit feedback.';
+                msgEl.className = 'feedback-msg msg-error';
+            });
+        });
+    });
+</script>
+{% endblock %}

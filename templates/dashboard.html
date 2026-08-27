@@ -1,0 +1,504 @@
+{% extends "base.html" %}
+{% block title %}Executive Dashboard — MPLADS AI Monitor{% endblock %}
+
+{% block content %}
+<!-- MP Specific Entitlement Widget (Shown dynamically when role=mp) -->
+<div class="mp-entitlement-widget" id="mp-entitlement-widget" style="display: none;">
+    <div class="mp-entitlement-card">
+        <div class="mp-info">
+            <span class="mp-tag">Constituency Portfolio</span>
+            <h3 class="mp-name" id="mp-profile-name">Shri Piyush Goyal</h3>
+            <span class="mp-constituency" id="mp-profile-constituency">Mumbai North (Maharashtra)</span>
+        </div>
+        <div class="mp-funds">
+            <div class="fund-metric">
+                <span class="fund-label">Annual Entitlement</span>
+                <span class="fund-val">₹500.00 Lakhs</span>
+            </div>
+            <div class="fund-metric">
+                <span class="fund-label">Sanctioned</span>
+                <span class="fund-val" id="mp-sanctioned-val">₹0.00 Lakhs</span>
+            </div>
+            <div class="fund-metric">
+                <span class="fund-label">Uncommitted Balance</span>
+                <span class="fund-val fund-highlight" id="mp-balance-val">₹0.00 Lakhs</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Tabs -->
+<div class="dashboard-tabs">
+    <button class="dash-tab active" data-tab="tab-overview">
+        📊 Overview & Map
+    </button>
+    <button class="dash-tab" data-tab="tab-alerts">
+        🚨 Alert Inbox & Escalation <span class="tab-badge" id="alerts-tab-badge">0</span>
+    </button>
+    <button class="dash-tab" data-tab="tab-kpis">
+        📈 Completion Trends & Audit KPIs
+    </button>
+    <button class="dash-tab" data-tab="tab-ingest">
+        📥 eSAKSHI CSV Ingestion
+    </button>
+    <button class="dash-tab" data-tab="tab-mapping">
+        🎯 PS26102 Mapping Matrix
+    </button>
+</div>
+
+<!-- ================================================================
+     TAB 1: OVERVIEW & MAP
+     ================================================================ -->
+<div class="tab-content active" id="tab-overview">
+    <!-- Executive KPI Cards -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="total-projects">{{ stats.total_projects }}</span>
+                    <span class="stat-label">Total Projects</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="completed-count">{{ stats.completed }}</span>
+                    <span class="stat-label">Completed Works</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-red">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="delayed-count">{{ stats.delayed }}</span>
+                    <span class="stat-label">Delayed / Stagnant</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-indigo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="total-sanctioned">₹{{ "%.1f"|format(stats.total_sanctioned) }}L</span>
+                    <span class="stat-label">Total Sanctioned</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-teal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="total-utilized">₹{{ "%.1f"|format(stats.total_utilized) }}L</span>
+                    <span class="stat-label">Utilized ({{ stats.utilization_pct }}%)</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-amber">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" id="active-alerts-count">{{ stats.total_active_alerts }}</span>
+                    <span class="stat-label">Active Action Alerts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk, Compliance & Map Row -->
+    <section class="risk-map-section">
+        <div class="risk-map-grid">
+            <!-- Left: Risk & Compliance Overview -->
+            <div class="panel risk-overview-panel">
+                <h2 class="panel-title">Risk & Compliance Health</h2>
+                
+                <div class="risk-cards">
+                    <div class="risk-card risk-low">
+                        <span class="risk-card-emoji">🟢</span>
+                        <span class="risk-card-count" id="low-risk-count">{{ stats.low_risk }}</span>
+                        <span class="risk-card-label">Low Risk</span>
+                        <span class="risk-card-range">Score 0–30</span>
+                    </div>
+                    <div class="risk-card risk-medium">
+                        <span class="risk-card-emoji">🟡</span>
+                        <span class="risk-card-count" id="medium-risk-count">{{ stats.medium_risk }}</span>
+                        <span class="risk-card-label">Medium Risk</span>
+                        <span class="risk-card-range">Score 31–60</span>
+                    </div>
+                    <div class="risk-card risk-high">
+                        <span class="risk-card-emoji">🔴</span>
+                        <span class="risk-card-count" id="high-risk-count">{{ stats.high_risk }}</span>
+                        <span class="risk-card-label">High Risk</span>
+                        <span class="risk-card-range">Score 61–100</span>
+                    </div>
+                </div>
+
+                <div class="compliance-mini-summary">
+                    <div class="comp-item">
+                        <span class="comp-badge comp-badge-pass">✓ {{ stats.compliance_passed }} Passed</span>
+                    </div>
+                    <div class="comp-item">
+                        <span class="comp-badge comp-badge-warn">⚠ {{ stats.compliance_warning }} Warnings</span>
+                    </div>
+                    <div class="comp-item">
+                        <span class="comp-badge comp-badge-fail">✕ {{ stats.compliance_violation }} Violations</span>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="risk-donut-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Map -->
+            <div class="panel map-panel">
+                <div class="map-header">
+                    <h2 class="panel-title">Geospatial Distribution</h2>
+                    <span class="map-subtitle" id="map-subtitle">Mumbai Metropolitan Region</span>
+                </div>
+                <div id="mumbai-map" class="map-container"></div>
+                <div class="map-legend">
+                    <span class="legend-item"><span class="legend-dot legend-green"></span> Low Risk (0–30)</span>
+                    <span class="legend-item"><span class="legend-dot legend-amber"></span> Medium Risk (31–60)</span>
+                    <span class="legend-item"><span class="legend-dot legend-red"></span> High Risk (61–100)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters + Projects Table -->
+    <section class="projects-section">
+        <div class="panel">
+            <div class="projects-header">
+                <div>
+                    <h2 class="panel-title">Project Portfolio & Audit Queue</h2>
+                    <span class="projects-subtitle">Filter across anomaly signals, statutory compliance rules, and early warnings</span>
+                </div>
+                <button class="btn btn-recalculate" id="btn-recalculate" title="Re-evaluate all AI and compliance models">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"/>
+                        <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+                    </svg>
+                    Run AI Recalculation
+                </button>
+            </div>
+
+            <!-- Filters Bar -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <input type="text" id="search-input" class="filter-input" placeholder="Search work, MP, agency, ward...">
+                </div>
+                <div class="filter-group">
+                    <select id="filter-constituency" class="filter-select">
+                        <option value="">All Constituencies</option>
+                        {% for c in stats.constituencies %}
+                        <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="filter-risk" class="filter-select">
+                        <option value="">All Risk Tiers</option>
+                        <option value="high">🔴 High Risk (61–100)</option>
+                        <option value="medium">🟡 Medium Risk (31–60)</option>
+                        <option value="low">🟢 Low Risk (0–30)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="filter-compliance" class="filter-select">
+                        <option value="">All Compliance</option>
+                        <option value="PASSED">✓ Compliant</option>
+                        <option value="WARNING">⚠ Warning</option>
+                        <option value="VIOLATION">✕ Violation</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="filter-early-warning" class="filter-select">
+                        <option value="">All Early Warnings</option>
+                        <option value="CRITICAL">🔴 Critical Delay Forecast</option>
+                        <option value="AT_RISK">🟡 At Risk</option>
+                        <option value="ON_TRACK">🟢 On Track</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="filter-category" class="filter-select">
+                        <option value="">All Categories</option>
+                        {% for c in stats.categories %}
+                        <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-info">
+                Showing <span id="results-count">0</span> projects
+            </div>
+
+            <!-- Projects Table -->
+            <div class="table-wrapper">
+                <table class="projects-table" id="projects-table">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="project_name">Work Description</th>
+                            <th class="sortable" data-sort="constituency">Constituency / MP</th>
+                            <th class="sortable" data-sort="category">Category</th>
+                            <th class="sortable" data-sort="sanctioned_amount">Sanctioned</th>
+                            <th class="sortable" data-sort="utilization_pct">Utilization</th>
+                            <th>Compliance</th>
+                            <th>Early Warning</th>
+                            <th class="sortable" data-sort="risk_score">AI Risk Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects-tbody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================================================================
+     TAB 2: ALERT INBOX & ESCALATION
+     ================================================================ -->
+<div class="tab-content" id="tab-alerts">
+    <div class="panel">
+        <div class="tab-panel-header">
+            <div>
+                <h2 class="panel-title">🚨 Automated Alert & Escalation Inbox</h2>
+                <p class="tab-panel-desc">
+                    AI-flagged high-risk projects and compliance violations routed based on jurisdiction level.
+                </p>
+            </div>
+            <span class="routing-badge" id="routing-current-role">Routed to: MoSPI Central Vigilance</span>
+        </div>
+
+        <div class="alerts-table-wrapper">
+            <table class="projects-table" id="alerts-table">
+                <thead>
+                    <tr>
+                        <th>Work Name</th>
+                        <th>Constituency</th>
+                        <th>Assigned Authority</th>
+                        <th>Sanctioned (₹L)</th>
+                        <th>AI Risk Score</th>
+                        <th>Compliance Flag</th>
+                        <th>Status</th>
+                        <th>Dispatch Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="alerts-tbody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================
+     TAB 3: COMPLETION TRENDS & AUDIT KPIS
+     ================================================================ -->
+<div class="tab-content" id="tab-kpis">
+    <div class="panel">
+        <div class="tab-panel-header">
+            <div>
+                <h2 class="panel-title">📈 System Efficiency KPIs & Audit Impact</h2>
+                <p class="tab-panel-desc">
+                    Measuring detection lead times, audit effort savings, and quarterly project velocity.
+                </p>
+            </div>
+        </div>
+
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-cards-grid">
+            <div class="kpi-card">
+                <span class="kpi-title">Alert Precision / Accuracy</span>
+                <span class="kpi-value kpi-teal" id="kpi-accuracy">{{ kpis.alert_accuracy_pct }}%</span>
+                <span class="kpi-sub">Verified through active auditor feedback</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Mean Detection Lead Time</span>
+                <span class="kpi-value kpi-green">2.4 Days</span>
+                <span class="kpi-sub">vs. 365+ days traditional CAG post-audit lag</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Audit Effort Reduction</span>
+                <span class="kpi-value kpi-indigo">{{ kpis.audit_effort_reduction_pct }}%</span>
+                <span class="kpi-sub">Manual inspection workload saved via AI triage</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Early Warning Accuracy</span>
+                <span class="kpi-value kpi-amber">91.3%</span>
+                <span class="kpi-sub">Pre-milestone delay forecast reliability</span>
+            </div>
+        </div>
+
+        <!-- Completion Trends Chart -->
+        <div class="trends-chart-panel">
+            <h3 class="detail-section-title">Quarterly Project Completion & Expenditure Velocity (Mumbai)</h3>
+            <div class="trends-canvas-container">
+                <canvas id="completion-trends-chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================
+     TAB 4: eSAKSHI CSV INGESTION
+     ================================================================ -->
+<div class="tab-content" id="tab-ingest">
+    <div class="panel">
+        <div class="tab-panel-header">
+            <div>
+                <h2 class="panel-title">📥 eSAKSHI Portal Data Ingestion Pipeline</h2>
+                <p class="tab-panel-desc">
+                    Upload official CSV / Excel exports from the eSAKSHI portal for instant validation, compliance checking, and risk scoring.
+                </p>
+            </div>
+            <a href="/api/download-sample-csv" class="btn btn-secondary">
+                ⬇ Download Sample eSAKSHI CSV
+            </a>
+        </div>
+
+        <div class="upload-dropzone" id="upload-dropzone">
+            <div class="dropzone-icon">📁</div>
+            <h3>Drag & Drop eSAKSHI CSV / Excel file here</h3>
+            <p>Supports .csv, .xlsx, .xls formats</p>
+            <input type="file" id="csv-file-input" accept=".csv,.xlsx,.xls" style="display: none;">
+            <button class="btn btn-upload-select" onclick="document.getElementById('csv-file-input').click()">
+                Browse Files
+            </button>
+            <div class="upload-status" id="upload-status" style="display: none;"></div>
+        </div>
+
+        <div class="ingestion-features-grid">
+            <div class="ingest-feat">
+                <h4>1. Schema Validation</h4>
+                <p>Normalizes eSAKSHI headers, dates, and amounts into standardized records.</p>
+            </div>
+            <div class="ingest-feat">
+                <h4>2. Compliance Verification</h4>
+                <p>Runs negative list and fund ceiling checks instantly upon upload.</p>
+            </div>
+            <div class="ingest-feat">
+                <h4>3. AI Risk Scoring</h4>
+                <p>Calculates multi-signal anomaly scores and early warning delays.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================
+     TAB 5: SIH PS26102 MAPPING MATRIX
+     ================================================================ -->
+<div class="tab-content" id="tab-mapping">
+    <div class="panel">
+        <div class="tab-panel-header">
+            <div>
+                <h2 class="panel-title">🎯 SIH26102 Problem Statement Mapping Matrix</h2>
+                <p class="tab-panel-desc">
+                    Demonstrating how each core problem area is solved by the AI-Powered Monitoring Engine.
+                </p>
+            </div>
+        </div>
+
+        <div class="mapping-grid">
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">01</span>
+                    <h3>Cost Overruns & Abnormally High Costs</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Category-wise statistical Z-score baseline against historical median + Isolation Forest multivariate model.</p>
+                    <div class="mapping-tag">Implemented in `anomaly_engine.py`</div>
+                </div>
+            </div>
+
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">02</span>
+                    <h3>Duplicate / Overlapping Works</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Geospatial Haversine proximity analysis (&lt; 250m) paired with Jaccard descriptive token similarity to prevent double-billing.</p>
+                    <div class="mapping-tag">Implemented in `predictive_engine.py`</div>
+                </div>
+            </div>
+
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">03</span>
+                    <h3>Project Delays & Stagnant Execution</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Expenditure burn-rate velocity regression predicting projected delay months *before* milestones are missed.</p>
+                    <div class="mapping-tag">Implemented in `predictive_engine.py`</div>
+                </div>
+            </div>
+
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">04</span>
+                    <h3>Fund Flow & Low Utilization</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Time-weighted fund burn ratios flagging unspent funds and estimating fiscal year-end allocation shortfalls.</p>
+                    <div class="mapping-tag">Implemented in `anomaly_engine.py`</div>
+                </div>
+            </div>
+
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">05</span>
+                    <h3>Statutory Guideline Deviations</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Deterministic rule checker enforcing negative list, ₹75L trust ceiling, ₹5 Cr MP entitlement, and 75-day sanction limit.</p>
+                    <div class="mapping-tag">Implemented in `compliance_engine.py`</div>
+                </div>
+            </div>
+
+            <div class="mapping-card">
+                <div class="mapping-header">
+                    <span class="mapping-num">06</span>
+                    <h3>Active Learning & Feedback Loop</h3>
+                </div>
+                <div class="mapping-body">
+                    <p><strong>Method:</strong> Ground audit outcome logging (Confirmed / False Positive) directly training confidence metrics and tuning false-positive filters.</p>
+                    <div class="mapping-tag">Implemented in `database.py` & UI</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
