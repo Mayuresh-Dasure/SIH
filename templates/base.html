@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI-Powered MPLADS Monitoring & Early Warning System — SIH26102">
     <title>{% block title %}MPLADS AI Monitor — SIH26102{% endblock %}</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Newsreader (Mistral Editorial Serif) + Inter (UI/Sans) + JetBrains Mono (Code/Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+        rel="stylesheet">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -20,79 +23,196 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- App CSS -->
+    <!-- App CSS (Mistral AI Design System) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-    <!-- Navigation with Role-Based Switcher -->
-    <nav class="navbar">
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <div class="nav-container">
+            <!-- Brand -->
             <a href="/" class="nav-brand">
                 <div class="nav-logo">
-                    <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
-                        <path d="M8 22L16 10L24 22H8Z" fill="white" opacity="0.9"/>
-                        <circle cx="16" cy="17" r="2.5" fill="white"/>
-                        <defs>
-                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
-                                <stop offset="0%" stop-color="#14b8a6"/>
-                                <stop offset="100%" stop-color="#6366f1"/>
-                            </linearGradient>
-                        </defs>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="#FA520F" />
+                        <path d="M7 23V9L16 18L25 9V23" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="16" cy="11" r="2" fill="#FFD06A" />
                     </svg>
                 </div>
                 <div class="nav-text">
-                    <h1>MPLADS AI Monitor</h1>
-                    <span class="nav-subtitle">SIH26102 • AI Anomaly & Statutory Compliance System</span>
+                    <span class="nav-title">MPLADS <span class="nav-title-accent">AI Monitor</span></span>
+                    <span class="nav-subtitle">Ministry of Statistics &amp; Programme Implementation</span>
                 </div>
             </a>
 
-            <!-- RBAC Role Switcher -->
-            <div class="nav-role-switcher" id="role-switcher">
-                <span class="role-label">Active Role:</span>
-                <div class="role-pill-group">
-                    <button class="role-btn active" data-role="ministry" title="MoSPI Central / National Governance">
-                        🏛️ Ministry (MoSPI)
-                    </button>
-                    <button class="role-btn" data-role="state_nodal" title="Maharashtra State Nodal Officer">
-                        🚩 State Nodal
-                    </button>
-                    <button class="role-btn" data-role="district_authority" title="District Magistrate / Planning Officer">
-                        🏢 District Authority
-                    </button>
-                    <button class="role-btn" data-role="mp" title="Member of Parliament Constituency View">
-                        👤 MP Portfolio
-                    </button>
+            <!-- RBAC Role Switcher (Desktop & Mobile Selector) -->
+            <div class="nav-role-section">
+                <div class="nav-role-switcher" id="role-switcher">
+                    <span class="role-label">Active Role:</span>
+                    <div class="role-pill-group" id="role-pill-group">
+                        <button class="role-btn active" data-role="ministry"
+                            title="MoSPI Central / National Governance">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                            <span>Ministry (MoSPI)</span>
+                        </button>
+                        <button class="role-btn" data-role="state_nodal" title="Maharashtra State Nodal Officer">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>State Nodal</span>
+                        </button>
+                        <button class="role-btn" data-role="district_authority"
+                            title="District Magistrate / Planning Officer">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+                            </svg>
+                            <span>District Authority</span>
+                        </button>
+                        <button class="role-btn" data-role="mp" title="Member of Parliament Constituency View">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>MP Portfolio</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Compact Mobile Role Selector Dropdown -->
+                <div class="mobile-role-select-wrapper">
+                    <label for="mobile-role-select" class="sr-only">Select Active Role</label>
+                    <select id="mobile-role-select" class="mobile-role-select">
+                        <option value="ministry" selected>🏛️ Ministry (MoSPI)</option>
+                        <option value="state_nodal">🚩 State Nodal (MH)</option>
+                        <option value="district_authority">🏢 District Authority</option>
+                        <option value="mp">👤 MP Portfolio</option>
+                    </select>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Role Context Banner -->
-    <div class="role-banner" id="role-banner">
-        <div class="role-banner-content">
-            <span class="role-banner-icon">🌐</span>
-            <span class="role-banner-text" id="role-banner-text">
-                Viewing as <strong>Ministry (MoSPI)</strong> — Full State & National Consolidated Portfolio
-            </span>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Main Content Container -->
+    <main class="main-content" id="main-content">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Signature Mistral Sunset Stripe Closing Band -->
+    <div class="sunset-stripe-band" aria-hidden="true"></div>
+
+    <!-- Mistral Cream Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
-            <p class="footer-disclaimer">
-                🛡️ AI-Powered MPLADS Monitoring • Deterministic Statutory Compliance & Machine Learning Anomaly Detection • Flags projects for investigation, not automatic determination of fraud
-            </p>
-            <p class="footer-credit">Smart India Hackathon 2026 — Problem Statement SIH26102</p>
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="footer-brand-header">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <rect width="32" height="32" rx="6" fill="#FA520F" />
+                            <path d="M7 23V9L16 18L25 9V23" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="footer-brand-title">MPLADS AI Monitor</span>
+                    </div>
+                    <p class="footer-desc">
+                        Intelligent, explainable monitoring and predictive early warning for the Members of Parliament
+                        Local Area Development Scheme.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Framework</h4>
+                        <ul class="footer-links">
+                            <li><a href="/?role=ministry" class="footer-link">Ministry Portal</a></li>
+                            <li><a href="/?role=district_authority" class="footer-link">District Sanctions</a></li>
+                            <li><a href="/?role=mp" class="footer-link">MP Entitlements</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Compliance</h4>
+                        <ul class="footer-links">
+                            <li><a href="#tab-mapping" class="footer-link">MoSPI Guidelines</a></li>
+                            <li><a href="#tab-alerts" class="footer-link">Vigilance Escalations</a></li>
+                            <li><a href="/api/download-sample-csv" class="footer-link">eSAKSHI Schema</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">
+                    AI-Powered MPLADS Monitoring &bull; Deterministic Statutory Compliance &bull; Flags projects for
+                    administrative investigation &bull; SIH 2026 Problem Statement SIH26102
+                </p>
+                <p class="footer-credit">Smart India Hackathon 2026</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Native-App Style Mobile Bottom Tab Bar -->
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Navigation">
+        <button class="bottom-nav-item active" data-tab="tab-overview">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg>
+            <span class="bottom-nav-label">Overview</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="tab-alerts">
+            <div class="bottom-nav-icon-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 01-3.46 0" />
+                </svg>
+                <span class="bottom-nav-badge" id="mobile-alerts-badge">0</span>
+            </div>
+            <span class="bottom-nav-label">Alerts</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="tab-kpis">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <span class="bottom-nav-label">KPIs</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="tab-ingest">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span class="bottom-nav-label">Ingestion</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="tab-mapping">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span class="bottom-nav-label">Matrix</span>
+        </button>
+    </nav>
+
     {% block scripts %}{% endblock %}
 </body>
+
 </html>

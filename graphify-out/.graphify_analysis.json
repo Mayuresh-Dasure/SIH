@@ -1,0 +1,305 @@
+{
+  "communities": {
+    "0": [
+      "app",
+      "app_api_alert_action",
+      "app_api_alerts",
+      "app_api_audit_feedback",
+      "app_api_download_sample_csv",
+      "app_api_kpis",
+      "app_api_map_data",
+      "app_api_projects",
+      "app_api_recalculate",
+      "app_api_summary",
+      "app_api_upload_csv",
+      "app_dashboard",
+      "app_rationale_1",
+      "app_rationale_126",
+      "app_rationale_136",
+      "app_rationale_146",
+      "app_rationale_158",
+      "app_rationale_171",
+      "app_rationale_188",
+      "app_rationale_195",
+      "app_rationale_210",
+      "app_rationale_219",
+      "app_rationale_33",
+      "app_rationale_88",
+      "database_get_kpis_and_audit_metrics",
+      "database_rationale_412",
+      "route"
+    ],
+    "1": [
+      "app_project_detail",
+      "app_rationale_53",
+      "database",
+      "database_clear_projects",
+      "database_get_alerts",
+      "database_get_connection",
+      "database_get_map_data",
+      "database_get_project",
+      "database_get_summary_stats",
+      "database_init_db",
+      "database_rationale_1",
+      "database_rationale_102",
+      "database_rationale_172",
+      "database_rationale_19",
+      "database_rationale_199",
+      "database_rationale_253",
+      "database_rationale_26",
+      "database_rationale_315",
+      "database_rationale_358",
+      "database_rationale_399",
+      "database_rationale_451",
+      "database_save_audit_feedback",
+      "database_search_projects",
+      "database_update_alert_action"
+    ],
+    "2": [
+      "static_js_dashboard",
+      "static_js_dashboard_bindfilters",
+      "static_js_dashboard_bindrecalculate",
+      "static_js_dashboard_bindsort",
+      "static_js_dashboard_escapehtml",
+      "static_js_dashboard_fetchalerts",
+      "static_js_dashboard_fetchprojects",
+      "static_js_dashboard_fetchsummary",
+      "static_js_dashboard_getfilterparams",
+      "static_js_dashboard_getriskclass",
+      "static_js_dashboard_getstatusclass",
+      "static_js_dashboard_initcharts",
+      "static_js_dashboard_initcsvupload",
+      "static_js_dashboard_initmap",
+      "static_js_dashboard_initrolefromurl",
+      "static_js_dashboard_initroleswitcher",
+      "static_js_dashboard_inittabs",
+      "static_js_dashboard_refreshmapdata",
+      "static_js_dashboard_renderalertstable",
+      "static_js_dashboard_rendertable",
+      "static_js_dashboard_rendertrendschart",
+      "static_js_dashboard_updatedonutchart",
+      "static_js_dashboard_updateroleui",
+      "static_js_dashboard_updatetext"
+    ],
+    "3": [
+      "csv_pipeline",
+      "csv_pipeline_generate_sample_esakshi_csv",
+      "csv_pipeline_normalize_column_name",
+      "csv_pipeline_parse_and_ingest_csv",
+      "csv_pipeline_rationale_1",
+      "csv_pipeline_rationale_161",
+      "csv_pipeline_rationale_41",
+      "csv_pipeline_rationale_51",
+      "database_insert_projects_bulk",
+      "database_rationale_112",
+      "predictive_engine",
+      "predictive_engine_calculate_predictive_delay",
+      "predictive_engine_detect_duplicate_works",
+      "predictive_engine_haversine_distance_meters",
+      "predictive_engine_rationale_1",
+      "predictive_engine_rationale_101",
+      "predictive_engine_rationale_17",
+      "predictive_engine_rationale_34",
+      "seed_data",
+      "seed_data_generate_all_projects",
+      "seed_data_rationale_1"
+    ],
+    "4": [
+      "anomaly_engine",
+      "anomaly_engine_calculate_risk_scores",
+      "anomaly_engine_detect_cost_anomalies",
+      "anomaly_engine_detect_delay_anomalies",
+      "anomaly_engine_detect_speed_anomalies",
+      "anomaly_engine_detect_utilization_anomalies",
+      "anomaly_engine_rationale_1",
+      "anomaly_engine_rationale_119",
+      "anomaly_engine_rationale_163",
+      "anomaly_engine_rationale_199",
+      "anomaly_engine_rationale_250",
+      "anomaly_engine_rationale_36",
+      "anomaly_engine_rationale_369",
+      "anomaly_engine_rationale_71",
+      "anomaly_engine_run_isolation_forest",
+      "anomaly_engine_update_risk_scores",
+      "database_get_all_projects",
+      "database_rationale_164",
+      "database_rationale_474",
+      "database_update_risk_and_compliance_scores"
+    ],
+    "5": [
+      "compliance_engine",
+      "compliance_engine_evaluate_compliance",
+      "compliance_engine_evaluate_fund_limits",
+      "compliance_engine_evaluate_implementing_agency",
+      "compliance_engine_evaluate_statutory_deadlines",
+      "compliance_engine_evaluate_work_eligibility",
+      "compliance_engine_rationale_1",
+      "compliance_engine_rationale_107",
+      "compliance_engine_rationale_131",
+      "compliance_engine_rationale_36",
+      "compliance_engine_rationale_57",
+      "compliance_engine_rationale_81"
+    ],
+    "6": [
+      "test_prototype",
+      "test_prototype_rationale_1",
+      "test_prototype_run_tests",
+      "test_prototype_test_endpoint"
+    ]
+  },
+  "cohesion": {
+    "0": 0.10826210826210826,
+    "1": 0.11956521739130435,
+    "2": 0.17028985507246377,
+    "3": 0.14761904761904762,
+    "4": 0.14210526315789473,
+    "5": 0.22727272727272727,
+    "6": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "anomaly_engine_calculate_risk_scores",
+      "label": "calculate_risk_scores()",
+      "degree": 16
+    },
+    {
+      "id": "database_get_connection",
+      "label": "get_connection()",
+      "degree": 16
+    },
+    {
+      "id": "compliance_engine_evaluate_compliance",
+      "label": "evaluate_compliance()",
+      "degree": 11
+    },
+    {
+      "id": "csv_pipeline_parse_and_ingest_csv",
+      "label": "parse_and_ingest_csv()",
+      "degree": 9
+    },
+    {
+      "id": "database_get_summary_stats",
+      "label": "get_summary_stats()",
+      "degree": 7
+    },
+    {
+      "id": "predictive_engine_calculate_predictive_delay",
+      "label": "calculate_predictive_delay()",
+      "degree": 7
+    },
+    {
+      "id": "predictive_engine_detect_duplicate_works",
+      "label": "detect_duplicate_works()",
+      "degree": 7
+    },
+    {
+      "id": "database_insert_projects_bulk",
+      "label": "insert_projects_bulk()",
+      "degree": 6
+    },
+    {
+      "id": "database_get_all_projects",
+      "label": "get_all_projects()",
+      "degree": 6
+    },
+    {
+      "id": "database_get_kpis_and_audit_metrics",
+      "label": "get_kpis_and_audit_metrics()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "calculate_risk_scores()",
+      "target": "evaluate_compliance()",
+      "source_files": [
+        "anomaly_engine.py",
+        "compliance_engine.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "calculate_risk_scores()",
+      "target": "calculate_predictive_delay()",
+      "source_files": [
+        "anomaly_engine.py",
+        "predictive_engine.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "calculate_risk_scores()",
+      "target": "detect_duplicate_works()",
+      "source_files": [
+        "anomaly_engine.py",
+        "predictive_engine.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "api_recalculate()",
+      "target": "calculate_risk_scores()",
+      "source_files": [
+        "app.py",
+        "anomaly_engine.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "parse_and_ingest_csv()",
+      "target": "calculate_risk_scores()",
+      "source_files": [
+        "csv_pipeline.py",
+        "anomaly_engine.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `calculate_risk_scores()` connect `Community 4` to `Community 0`, `Community 3`, `Community 5`?",
+      "why": "High betweenness centrality (0.090) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `evaluate_compliance()` connect `Community 5` to `Community 3`, `Community 4`?",
+      "why": "High betweenness centrality (0.071) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `get_connection()` connect `Community 1` to `Community 0`, `Community 3`, `Community 4`?",
+      "why": "High betweenness centrality (0.040) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10826210826210826 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11956521739130435 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14761904761904762 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 4` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14210526315789473 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

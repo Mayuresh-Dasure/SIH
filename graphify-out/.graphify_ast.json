@@ -1,0 +1,4084 @@
+{
+  "nodes": [
+    {
+      "id": "anomaly_engine",
+      "label": "anomaly_engine.py",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_detect_cost_anomalies",
+      "label": "detect_cost_anomalies()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_detect_delay_anomalies",
+      "label": "detect_delay_anomalies()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L70",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_detect_utilization_anomalies",
+      "label": "detect_utilization_anomalies()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L118",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_detect_speed_anomalies",
+      "label": "detect_speed_anomalies()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L162",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_run_isolation_forest",
+      "label": "run_isolation_forest()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L198",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_calculate_risk_scores",
+      "label": "calculate_risk_scores()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L249",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_update_risk_scores",
+      "label": "update_risk_scores()",
+      "file_type": "code",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L368",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_1",
+      "label": "anomaly_engine.py — Multi-Signal Anomaly Detection, Compliance Integration &…",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_36",
+      "label": "Detect projects with unusually high cost compared to category median.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_71",
+      "label": "Detect projects with significant delays.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_119",
+      "label": "Detect projects with unusually low fund utilization given their age.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L119",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_163",
+      "label": "Detect projects completed suspiciously quickly for their cost.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L163",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_199",
+      "label": "Run Isolation Forest for unsupervised anomaly detection.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L199",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_250",
+      "label": "Main calculation routine: evaluates anomalies, compliance, early warnings, and…",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L250",
+      "_origin": "ast"
+    },
+    {
+      "id": "anomaly_engine_rationale_369",
+      "label": "Backward compatibility alias.",
+      "file_type": "rationale",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L369",
+      "_origin": "ast"
+    },
+    {
+      "id": "app",
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "route",
+      "label": "route",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_dashboard",
+      "label": "dashboard()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_project_detail",
+      "label": "project_detail()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L52",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_projects",
+      "label": "api_projects()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L87",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_summary",
+      "label": "api_summary()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L125",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_map_data",
+      "label": "api_map_data()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L135",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_alerts",
+      "label": "api_alerts()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L145",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_alert_action",
+      "label": "api_alert_action()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L157",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_audit_feedback",
+      "label": "api_audit_feedback()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L170",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_kpis",
+      "label": "api_kpis()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L187",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_upload_csv",
+      "label": "api_upload_csv()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L194",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_download_sample_csv",
+      "label": "api_download_sample_csv()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L209",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_api_recalculate",
+      "label": "api_recalculate()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L218",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_1",
+      "label": "app.py — Flask application for MPLADS AI-Powered Monitoring Dashboard. Upgraded…",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_33",
+      "label": "Main dashboard page supporting role context.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_53",
+      "label": "Detailed drill-down page with compliance checklist, early warning, and auditor…",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L53",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_88",
+      "label": "Return filtered project list scoped by role and search criteria.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L88",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_126",
+      "label": "Return summary statistics scoped by role.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L126",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_136",
+      "label": "Return geotagged markers scoped by role.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L136",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_146",
+      "label": "Return role-routed alerts.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L146",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_158",
+      "label": "Execute an alert action (Assign Inspection, Request Explanation, Resolve,…",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L158",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_171",
+      "label": "Record ground auditor feedback (CONFIRMED / FALSE_POSITIVE /…",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L171",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_188",
+      "label": "Return advanced SIH efficiency KPIs and completion trends.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L188",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_195",
+      "label": "Ingest eSAKSHI exported CSV/Excel data.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L195",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_210",
+      "label": "Download bundled sample eSAKSHI CSV file.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L210",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rationale_219",
+      "label": "Re-run AI models, compliance engine, early warning, and alert routing.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L219",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine",
+      "label": "compliance_engine.py",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_evaluate_work_eligibility",
+      "label": "evaluate_work_eligibility()",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_evaluate_fund_limits",
+      "label": "evaluate_fund_limits()",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_evaluate_implementing_agency",
+      "label": "evaluate_implementing_agency()",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L80",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_evaluate_statutory_deadlines",
+      "label": "evaluate_statutory_deadlines()",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_evaluate_compliance",
+      "label": "evaluate_compliance()",
+      "file_type": "code",
+      "source_file": "compliance_engine.py",
+      "source_location": "L130",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_1",
+      "label": "compliance_engine.py — Statutory Compliance Rule Engine for MPLADS Guidelines…",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_36",
+      "label": "Rule 1: Check against MPLADS Negative List (prohibited works).",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_57",
+      "label": "Rule 2: Check fund ceilings (₹75L Trust cap, ₹5 Cr annual MP cap).",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L57",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_81",
+      "label": "Rule 3: Check whether implementing agency is accredited.",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L81",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_107",
+      "label": "Rule 4: Check 75-day sanction deadline and execution timeline.",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L107",
+      "_origin": "ast"
+    },
+    {
+      "id": "compliance_engine_rationale_131",
+      "label": "Run full compliance audit on a project. Returns: compliance_status: 'PASSED' |…",
+      "file_type": "rationale",
+      "source_file": "compliance_engine.py",
+      "source_location": "L131",
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline",
+      "label": "csv_pipeline.py",
+      "file_type": "code",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_normalize_column_name",
+      "label": "normalize_column_name()",
+      "file_type": "code",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L40",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_parse_and_ingest_csv",
+      "label": "parse_and_ingest_csv()",
+      "file_type": "code",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L50",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_generate_sample_esakshi_csv",
+      "label": "generate_sample_esakshi_csv()",
+      "file_type": "code",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L160",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_rationale_1",
+      "label": "csv_pipeline.py — Realistic eSAKSHI CSV/Excel Ingestion Pipeline Accepts…",
+      "file_type": "rationale",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_rationale_41",
+      "label": "Map arbitrary column header to standard field name.",
+      "file_type": "rationale",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_rationale_51",
+      "label": "Parse uploaded CSV or Excel file, validate schema, evaluate AI models, and…",
+      "file_type": "rationale",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "csv_pipeline_rationale_161",
+      "label": "Create a sample downloadable eSAKSHI format CSV file.",
+      "file_type": "rationale",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L161",
+      "_origin": "ast"
+    },
+    {
+      "id": "database",
+      "label": "database.py",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_connection",
+      "label": "get_connection()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_init_db",
+      "label": "init_db()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_clear_projects",
+      "label": "clear_projects()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L101",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_insert_projects_bulk",
+      "label": "insert_projects_bulk()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L111",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_all_projects",
+      "label": "get_all_projects()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L163",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_project",
+      "label": "get_project()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L171",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_search_projects",
+      "label": "search_projects()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L197",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_summary_stats",
+      "label": "get_summary_stats()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L252",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_alerts",
+      "label": "get_alerts()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L314",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_update_alert_action",
+      "label": "update_alert_action()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L357",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_save_audit_feedback",
+      "label": "save_audit_feedback()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L398",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_kpis_and_audit_metrics",
+      "label": "get_kpis_and_audit_metrics()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L411",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_get_map_data",
+      "label": "get_map_data()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L450",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_update_risk_and_compliance_scores",
+      "label": "update_risk_and_compliance_scores()",
+      "file_type": "code",
+      "source_file": "database.py",
+      "source_location": "L473",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_1",
+      "label": "database.py — SQLite helpers for MPLADS Monitoring System (Upgraded for…",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_19",
+      "label": "Get a database connection with row factory.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_26",
+      "label": "Create all required tables with expanded schema.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_102",
+      "label": "Delete all projects and logs (used during re-seeding).",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L102",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_112",
+      "label": "Insert multiple projects at once with extended fields.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L112",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_164",
+      "label": "Return all projects as list of dicts.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L164",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_172",
+      "label": "Return a single project by ID with attached audit feedback and action logs.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L172",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_199",
+      "label": "Search and filter projects with full Role-Based Access Control scoping.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L199",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_253",
+      "label": "Return aggregate statistics scoped by user role.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L253",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_315",
+      "label": "Retrieve actionable alerts based on role and escalation rules.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L315",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_358",
+      "label": "Execute alert action (Assign Field Inspection, Request Explanation, Resolve,…",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L358",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_399",
+      "label": "Save ground auditor verdict (CONFIRMED / FALSE_POSITIVE / UNDER_INVESTIGATION).",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L399",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_412",
+      "label": "Compute advanced SIH KPIs: Alert Accuracy, Detection Time, Audit Effort…",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L412",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_451",
+      "label": "Return geotagged project records with risk and compliance tags.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L451",
+      "_origin": "ast"
+    },
+    {
+      "id": "database_rationale_474",
+      "label": "Update all computed risk scores, compliance results, predictions, and alerts.",
+      "file_type": "rationale",
+      "source_file": "database.py",
+      "source_location": "L474",
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine",
+      "label": "predictive_engine.py",
+      "file_type": "code",
+      "source_file": "predictive_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_haversine_distance_meters",
+      "label": "haversine_distance_meters()",
+      "file_type": "code",
+      "source_file": "predictive_engine.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_calculate_predictive_delay",
+      "label": "calculate_predictive_delay()",
+      "file_type": "code",
+      "source_file": "predictive_engine.py",
+      "source_location": "L33",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_detect_duplicate_works",
+      "label": "detect_duplicate_works()",
+      "file_type": "code",
+      "source_file": "predictive_engine.py",
+      "source_location": "L100",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_rationale_1",
+      "label": "predictive_engine.py — Predictive Early Warning & Duplicate Works Detection…",
+      "file_type": "rationale",
+      "source_file": "predictive_engine.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_rationale_17",
+      "label": "Compute Haversine distance in meters between two lat/lon points.",
+      "file_type": "rationale",
+      "source_file": "predictive_engine.py",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_rationale_34",
+      "label": "Forecast expected completion delay in months using burn-rate velocity.",
+      "file_type": "rationale",
+      "source_file": "predictive_engine.py",
+      "source_location": "L34",
+      "_origin": "ast"
+    },
+    {
+      "id": "predictive_engine_rationale_101",
+      "label": "Detect overlapping or duplicate projects within 250 meters with matching…",
+      "file_type": "rationale",
+      "source_file": "predictive_engine.py",
+      "source_location": "L101",
+      "_origin": "ast"
+    },
+    {
+      "id": "seed_data",
+      "label": "seed_data.py",
+      "file_type": "code",
+      "source_file": "seed_data.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "seed_data_generate_all_projects",
+      "label": "generate_all_projects()",
+      "file_type": "code",
+      "source_file": "seed_data.py",
+      "source_location": "L129",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "seed_data_rationale_1",
+      "label": "seed_data.py — Generate realistic Mumbai MPLADS project data with compliance…",
+      "file_type": "rationale",
+      "source_file": "seed_data.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard",
+      "label": "dashboard.js",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_initrolefromurl",
+      "label": "initRoleFromUrl()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_initroleswitcher",
+      "label": "initRoleSwitcher()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_updateroleui",
+      "label": "updateRoleUI()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L77",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_inittabs",
+      "label": "initTabs()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_fetchsummary",
+      "label": "fetchSummary()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L128",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_fetchprojects",
+      "label": "fetchProjects()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L155",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_getfilterparams",
+      "label": "getFilterParams()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L172",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_rendertable",
+      "label": "renderTable()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L193",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_fetchalerts",
+      "label": "fetchAlerts()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L243",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_renderalertstable",
+      "label": "renderAlertsTable()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L254",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_initmap",
+      "label": "initMap()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L313",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_refreshmapdata",
+      "label": "refreshMapData()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L326",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_initcharts",
+      "label": "initCharts()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L366",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_updatedonutchart",
+      "label": "updateDonutChart()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L388",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_rendertrendschart",
+      "label": "renderTrendsChart()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L395",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_initcsvupload",
+      "label": "initCsvUpload()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L453",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_bindrecalculate",
+      "label": "bindRecalculate()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L509",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_bindfilters",
+      "label": "bindFilters()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L529",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_bindsort",
+      "label": "bindSort()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L544",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_updatetext",
+      "label": "updateText()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L556",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_getriskclass",
+      "label": "getRiskClass()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L561",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_getstatusclass",
+      "label": "getStatusClass()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L567",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "static_js_dashboard_escapehtml",
+      "label": "escapeHtml()",
+      "file_type": "code",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L577",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "test_prototype",
+      "label": "test_prototype.py",
+      "file_type": "code",
+      "source_file": "test_prototype.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "test_prototype_test_endpoint",
+      "label": "test_endpoint()",
+      "file_type": "code",
+      "source_file": "test_prototype.py",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "test_prototype_run_tests",
+      "label": "run_tests()",
+      "file_type": "code",
+      "source_file": "test_prototype.py",
+      "source_location": "L41",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "test_prototype_rationale_1",
+      "label": "test_prototype.py — Comprehensive test suite for upgraded SIH26102 MPLADS…",
+      "file_type": "rationale",
+      "source_file": "test_prototype.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "anomaly_engine",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "sklearn_ensemble",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "sklearn_preprocessing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "compliance_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "predictive_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_detect_cost_anomalies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_detect_delay_anomalies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_detect_utilization_anomalies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_detect_speed_anomalies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_run_isolation_forest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L249",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "anomaly_engine_update_risk_scores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L368",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "anomaly_engine_detect_cost_anomalies",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "anomaly_engine_detect_delay_anomalies",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L262",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "anomaly_engine_detect_utilization_anomalies",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L263",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "anomaly_engine_detect_speed_anomalies",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "anomaly_engine_run_isolation_forest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L265",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_1",
+      "target": "anomaly_engine",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_36",
+      "target": "anomaly_engine_detect_cost_anomalies",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_71",
+      "target": "anomaly_engine_detect_delay_anomalies",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_119",
+      "target": "anomaly_engine_detect_utilization_anomalies",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_163",
+      "target": "anomaly_engine_detect_speed_anomalies",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_199",
+      "target": "anomaly_engine_run_isolation_forest",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_250",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L250",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_rationale_369",
+      "target": "anomaly_engine_update_risk_scores",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L369",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "flask",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "anomaly_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "csv_pipeline",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_dashboard",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_project_detail",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_project_detail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_projects",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_summary",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_map_data",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_map_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_alerts",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_alerts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_alert_action",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_alert_action",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_audit_feedback",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_audit_feedback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_kpis",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_kpis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_upload_csv",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L193",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_upload_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_download_sample_csv",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_download_sample_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_recalculate",
+      "target": "route",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L217",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_api_recalculate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_1",
+      "target": "app",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_33",
+      "target": "app_dashboard",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_53",
+      "target": "app_project_detail",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_88",
+      "target": "app_api_projects",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_126",
+      "target": "app_api_summary",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_136",
+      "target": "app_api_map_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_146",
+      "target": "app_api_alerts",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_158",
+      "target": "app_api_alert_action",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_171",
+      "target": "app_api_audit_feedback",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_188",
+      "target": "app_api_kpis",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_195",
+      "target": "app_api_upload_csv",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_210",
+      "target": "app_api_download_sample_csv",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_rationale_219",
+      "target": "app_api_recalculate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L219",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "compliance_engine_evaluate_work_eligibility",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "compliance_engine_evaluate_fund_limits",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "compliance_engine_evaluate_implementing_agency",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "compliance_engine_evaluate_statutory_deadlines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_evaluate_compliance",
+      "target": "compliance_engine_evaluate_work_eligibility",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_evaluate_compliance",
+      "target": "compliance_engine_evaluate_fund_limits",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_evaluate_compliance",
+      "target": "compliance_engine_evaluate_implementing_agency",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_evaluate_compliance",
+      "target": "compliance_engine_evaluate_statutory_deadlines",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_1",
+      "target": "compliance_engine",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_36",
+      "target": "compliance_engine_evaluate_work_eligibility",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_57",
+      "target": "compliance_engine_evaluate_fund_limits",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_81",
+      "target": "compliance_engine_evaluate_implementing_agency",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_107",
+      "target": "compliance_engine_evaluate_statutory_deadlines",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "compliance_engine_rationale_131",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compliance_engine.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "io",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "compliance_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "predictive_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "csv_pipeline_normalize_column_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "csv_pipeline_parse_and_ingest_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "csv_pipeline_generate_sample_esakshi_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_parse_and_ingest_csv",
+      "target": "csv_pipeline_normalize_column_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_rationale_1",
+      "target": "csv_pipeline",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_rationale_41",
+      "target": "csv_pipeline_normalize_column_name",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_rationale_51",
+      "target": "csv_pipeline_parse_and_ingest_csv",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_rationale_161",
+      "target": "csv_pipeline_generate_sample_esakshi_csv",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "sqlite3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_connection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_init_db",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_clear_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_insert_projects_bulk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_all_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_project",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_search_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L197",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_summary_stats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L252",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_alerts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L314",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_update_alert_action",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L357",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_save_audit_feedback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L398",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_kpis_and_audit_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L411",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_get_map_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L450",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database",
+      "target": "database_update_risk_and_compliance_scores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L473",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_init_db",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_clear_projects",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_insert_projects_bulk",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_all_projects",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_project",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_search_projects",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_summary_stats",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_alerts",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L316",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_update_alert_action",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L359",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_save_audit_feedback",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L400",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_kpis_and_audit_metrics",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L413",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_get_map_data",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L452",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_update_risk_and_compliance_scores",
+      "target": "database_get_connection",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L475",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_1",
+      "target": "database",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_19",
+      "target": "database_get_connection",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_26",
+      "target": "database_init_db",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_102",
+      "target": "database_clear_projects",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_112",
+      "target": "database_insert_projects_bulk",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_164",
+      "target": "database_get_all_projects",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_172",
+      "target": "database_get_project",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_199",
+      "target": "database_search_projects",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_253",
+      "target": "database_get_summary_stats",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L253",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_315",
+      "target": "database_get_alerts",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L315",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_358",
+      "target": "database_update_alert_action",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L358",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_399",
+      "target": "database_save_audit_feedback",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L399",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_412",
+      "target": "database_get_kpis_and_audit_metrics",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L412",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_451",
+      "target": "database_get_map_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L451",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "database_rationale_474",
+      "target": "database_update_risk_and_compliance_scores",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "database.py",
+      "source_location": "L474",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "predictive_engine_haversine_distance_meters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine_detect_duplicate_works",
+      "target": "predictive_engine_haversine_distance_meters",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine_rationale_1",
+      "target": "predictive_engine",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine_rationale_17",
+      "target": "predictive_engine_haversine_distance_meters",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine_rationale_34",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "predictive_engine_rationale_101",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "predictive_engine.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "random",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "compliance_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "predictive_engine",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "seed_data_generate_all_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "csv_pipeline",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L470",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data_rationale_1",
+      "target": "seed_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_initrolefromurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_initroleswitcher",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_updateroleui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_inittabs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_fetchsummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_fetchprojects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_getfilterparams",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_rendertable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L193",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_fetchalerts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L243",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_renderalertstable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L254",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_initmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L313",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_refreshmapdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L326",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_initcharts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L366",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_updatedonutchart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L388",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_rendertrendschart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L395",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_initcsvupload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L453",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_bindrecalculate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L509",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_bindfilters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L529",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_bindsort",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L544",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_updatetext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L556",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_getriskclass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L561",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_getstatusclass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L567",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard",
+      "target": "static_js_dashboard_escapehtml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L577",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initrolefromurl",
+      "target": "static_js_dashboard_updateroleui",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initroleswitcher",
+      "target": "static_js_dashboard_updateroleui",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initroleswitcher",
+      "target": "static_js_dashboard_fetchsummary",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initroleswitcher",
+      "target": "static_js_dashboard_fetchprojects",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initroleswitcher",
+      "target": "static_js_dashboard_refreshmapdata",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initroleswitcher",
+      "target": "static_js_dashboard_fetchalerts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_inittabs",
+      "target": "static_js_dashboard_fetchalerts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_inittabs",
+      "target": "static_js_dashboard_rendertrendschart",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchsummary",
+      "target": "static_js_dashboard_updatetext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchsummary",
+      "target": "static_js_dashboard_updatedonutchart",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchprojects",
+      "target": "static_js_dashboard_getfilterparams",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L156",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchprojects",
+      "target": "static_js_dashboard_rendertable",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchprojects",
+      "target": "static_js_dashboard_updatetext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_rendertable",
+      "target": "static_js_dashboard_getriskclass",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L208",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_rendertable",
+      "target": "static_js_dashboard_getstatusclass",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L209",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_rendertable",
+      "target": "static_js_dashboard_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchalerts",
+      "target": "static_js_dashboard_renderalertstable",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L248",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_fetchalerts",
+      "target": "static_js_dashboard_updatetext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L249",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_renderalertstable",
+      "target": "static_js_dashboard_getriskclass",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_renderalertstable",
+      "target": "static_js_dashboard_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L270",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_initmap",
+      "target": "static_js_dashboard_refreshmapdata",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L323",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_refreshmapdata",
+      "target": "static_js_dashboard_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L350",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_bindfilters",
+      "target": "static_js_dashboard_fetchprojects",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L534",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "static_js_dashboard_bindsort",
+      "target": "static_js_dashboard_rendertable",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/dashboard.js",
+      "source_location": "L550",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype",
+      "target": "urllib_request",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype",
+      "target": "test_prototype_test_endpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype",
+      "target": "test_prototype_run_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype_run_tests",
+      "target": "test_prototype_test_endpoint",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "test_prototype_rationale_1",
+      "target": "test_prototype",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "test_prototype.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "database_get_all_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "database_update_risk_and_compliance_scores",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_init_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_all_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_project",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_search_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_summary_stats",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_map_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_alerts",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_update_alert_action",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_save_audit_feedback",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "database_get_kpis_and_audit_metrics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "csv_pipeline_parse_and_ingest_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "csv_pipeline_generate_sample_esakshi_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L212",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "database_get_connection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "database_insert_projects_bulk",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "database_init_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "database_clear_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "database_insert_projects_bulk",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "seed_data",
+      "target": "csv_pipeline_generate_sample_esakshi_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_data.py",
+      "source_location": "L470",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "database_get_all_projects",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L251",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "predictive_engine_detect_duplicate_works",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L268",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L293",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L297",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_calculate_risk_scores",
+      "target": "database_update_risk_and_compliance_scores",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L358",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "anomaly_engine_update_risk_scores",
+      "target": "database_update_risk_and_compliance_scores",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "anomaly_engine.py",
+      "source_location": "L370",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_parse_and_ingest_csv",
+      "target": "compliance_engine_evaluate_compliance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_parse_and_ingest_csv",
+      "target": "predictive_engine_calculate_predictive_delay",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_parse_and_ingest_csv",
+      "target": "database_insert_projects_bulk",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "csv_pipeline_parse_and_ingest_csv",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "csv_pipeline.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_dashboard",
+      "target": "database_get_summary_stats",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_dashboard",
+      "target": "database_get_kpis_and_audit_metrics",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_project_detail",
+      "target": "database_get_project",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_project_detail",
+      "target": "database_get_summary_stats",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_projects",
+      "target": "database_search_projects",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_summary",
+      "target": "database_get_summary_stats",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_map_data",
+      "target": "database_get_map_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_alerts",
+      "target": "database_get_alerts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_alert_action",
+      "target": "database_update_alert_action",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_audit_feedback",
+      "target": "database_save_audit_feedback",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_kpis",
+      "target": "database_get_kpis_and_audit_metrics",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L189",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_upload_csv",
+      "target": "csv_pipeline_parse_and_ingest_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_download_sample_csv",
+      "target": "csv_pipeline_generate_sample_esakshi_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_api_recalculate",
+      "target": "anomaly_engine_calculate_risk_scores",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L221",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

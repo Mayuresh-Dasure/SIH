@@ -1,14 +1,14 @@
 /**
- * dashboard.js — MPLADS AI Monitor Dashboard (SIH26102 Upgraded)
+ * dashboard.js — MPLADS AI Monitor Dashboard (Mistral AI Upgraded)
  *
  * Features:
  *   - Role-Based Access Control (RBAC) Switcher & Context Scoping
- *   - 5 Navigation Tabs Management
+ *   - Desktop & Native Mobile Bottom Tab Bar Sync
  *   - Multi-Signal Filterable Projects Table
- *   - Leaflet Map with Color-Coded Risk Markers
+ *   - Leaflet Map with Mistral Color-Coded Risk Markers
  *   - Chart.js Donut & Quarterly Completion Trends Line Chart
- *   - Alert Inbox & Dispatch Actions (Assign Inspection, Resolve, Escalate)
- *   - eSAKSHI CSV Drag-and-Drop Ingestion Pipeline
+ *   - Alert Inbox & Dispatch Actions (Assign Inspection, Resolve)
+ *   - eSAKSHI CSV Ingestion Pipeline
  */
 
 (function () {
@@ -54,24 +54,42 @@
     }
 
     function initRoleSwitcher() {
+        // Desktop role buttons
         document.querySelectorAll('.role-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const role = btn.dataset.role;
-                currentRole = role;
-                updateRoleUI(role);
-
-                // Update URL without full page reload
-                const url = new URL(window.location);
-                url.searchParams.set('role', role);
-                window.history.pushState({}, '', url);
-
-                // Refresh data
-                fetchSummary();
-                fetchProjects();
-                refreshMapData();
-                fetchAlerts();
+                changeRole(role);
             });
         });
+
+        // Mobile role dropdown
+        const mobileSelect = document.getElementById('mobile-role-select');
+        if (mobileSelect) {
+            mobileSelect.value = currentRole;
+            mobileSelect.addEventListener('change', () => {
+                changeRole(mobileSelect.value);
+            });
+        }
+    }
+
+    function changeRole(role) {
+        currentRole = role;
+        updateRoleUI(role);
+
+        // Update mobile dropdown if available
+        const mobileSelect = document.getElementById('mobile-role-select');
+        if (mobileSelect) mobileSelect.value = role;
+
+        // Update URL without full page reload
+        const url = new URL(window.location);
+        url.searchParams.set('role', role);
+        window.history.pushState({}, '', url);
+
+        // Refresh data
+        fetchSummary();
+        fetchProjects();
+        refreshMapData();
+        fetchAlerts();
     }
 
     function updateRoleUI(role) {
@@ -84,43 +102,66 @@
         const routingBadge = document.getElementById('routing-current-role');
 
         if (role === 'ministry') {
-            bannerText.innerHTML = 'Viewing as <strong>Ministry (MoSPI)</strong> — Consolidated National & State Portfolio';
-            mpWidget.style.display = 'none';
+            if (bannerText) bannerText.innerHTML = 'Viewing as <strong>Ministry (MoSPI)</strong> &mdash; Consolidated National &amp; State Portfolio';
+            if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: MoSPI Central Vigilance';
         } else if (role === 'state_nodal') {
-            bannerText.innerHTML = 'Viewing as <strong>Maharashtra State Nodal Officer</strong> — State-Wide Constituency Oversight';
-            mpWidget.style.display = 'none';
+            if (bannerText) bannerText.innerHTML = 'Viewing as <strong>Maharashtra State Nodal Officer</strong> &mdash; State-Wide Oversight';
+            if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: Maharashtra State Nodal';
         } else if (role === 'district_authority') {
-            bannerText.innerHTML = 'Viewing as <strong>District Magistrate (Mumbai Suburban)</strong> — Sanctioning & Inspection Queue';
-            mpWidget.style.display = 'none';
+            if (bannerText) bannerText.innerHTML = 'Viewing as <strong>District Magistrate (Mumbai Suburban)</strong> &mdash; Sanctions &amp; Audit Queue';
+            if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: District Planning Authority';
         } else if (role === 'mp') {
-            bannerText.innerHTML = `Viewing as <strong>Honorable MP (${currentMp})</strong> — Constituency Fund & Milestone Tracker`;
-            mpWidget.style.display = 'block';
+            if (bannerText) bannerText.innerHTML = `Viewing as <strong>Honorable MP (${currentMp})</strong> &mdash; Constituency Entitlement Tracker`;
+            if (mpWidget) mpWidget.style.display = 'block';
             if (routingBadge) routingBadge.textContent = `Routed to: MP Office (${currentMp})`;
         }
     }
 
-    // ── Navigation Tabs ─────────────────────────────────────────
+    // ── Navigation Tabs (Desktop & Native Mobile Bottom Bar) ─────
     function initTabs() {
-        document.querySelectorAll('.dash-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-                tab.classList.add('active');
-                const target = document.getElementById(tab.dataset.tab);
-                if (target) target.classList.add('active');
-
-                if (tab.dataset.tab === 'tab-alerts') {
-                    fetchAlerts();
-                } else if (tab.dataset.tab === 'tab-kpis') {
-                    renderTrendsChart();
-                } else if (tab.dataset.tab === 'tab-overview' && map) {
-                    setTimeout(() => map.invalidateSize(), 200);
-                }
+        const switchTab = (tabId) => {
+            // Update desktop tabs
+            document.querySelectorAll('.dash-tab').forEach(t => {
+                const isActive = t.dataset.tab === tabId;
+                t.classList.toggle('active', isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
             });
+
+            // Update mobile bottom nav items
+            document.querySelectorAll('.bottom-nav-item').forEach(b => {
+                b.classList.toggle('active', b.dataset.tab === tabId);
+            });
+
+            // Update tab contents
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            const target = document.getElementById(tabId);
+            if (target) target.classList.add('active');
+
+            if (tabId === 'tab-alerts') {
+                fetchAlerts();
+            } else if (tabId === 'tab-kpis') {
+                renderTrendsChart();
+            } else if (tabId === 'tab-overview' && map) {
+                setTimeout(() => map.invalidateSize(), 200);
+            }
+
+            // Scroll to top of tab smoothly if mobile
+            if (window.innerWidth <= 768) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        // Desktop tab click listener
+        document.querySelectorAll('.dash-tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+        });
+
+        // Mobile bottom nav click listener
+        document.querySelectorAll('.bottom-nav-item').forEach(btn => {
+            btn.addEventListener('click', () => switchTab(btn.dataset.tab));
         });
     }
 
@@ -140,6 +181,7 @@
                 updateText('medium-risk-count', stats.medium_risk);
                 updateText('high-risk-count', stats.high_risk);
                 updateText('alerts-tab-badge', stats.total_active_alerts);
+                updateText('mobile-alerts-badge', stats.total_active_alerts);
 
                 if (stats.mp_uncommitted_lakhs !== undefined) {
                     updateText('mp-sanctioned-val', `₹${stats.total_sanctioned.toFixed(1)} Lakhs`);
@@ -172,7 +214,6 @@
     function getFilterParams() {
         const params = {};
         const q = document.getElementById('search-input')?.value?.trim();
-        const status = document.getElementById('filter-status')?.value;
         const risk = document.getElementById('filter-risk')?.value;
         const constituency = document.getElementById('filter-constituency')?.value;
         const category = document.getElementById('filter-category')?.value;
@@ -180,7 +221,6 @@
         const early_warning = document.getElementById('filter-early-warning')?.value;
 
         if (q) params.q = q;
-        if (status) params.status = status;
         if (risk) params.risk = risk;
         if (constituency) params.constituency = constituency;
         if (category) params.category = category;
@@ -213,27 +253,27 @@
             return `
                 <tr>
                     <td>
-                        <strong>${escapeHtml(p.project_name)}</strong>
-                        <div style="font-size: 0.72rem; color: #64748b;">Agency: ${escapeHtml(p.implementing_agency || 'MCGM')}</div>
+                        <strong style="color: var(--ink); font-weight: 600;">${escapeHtml(p.project_name)}</strong>
+                        <div style="font-size: 11.5px; color: var(--steel); margin-top: 2px;">Agency: ${escapeHtml(p.implementing_agency || 'MCGM')}</div>
                     </td>
                     <td>
-                        ${escapeHtml(p.constituency)}<br>
-                        <span style="font-size: 0.72rem; color: #94a3b8;">${escapeHtml(p.mp_name)}</span>
+                        <span style="font-weight: 500;">${escapeHtml(p.constituency)}</span><br>
+                        <span style="font-size: 11.5px; color: var(--steel);">${escapeHtml(p.mp_name)}</span>
                     </td>
-                    <td>${escapeHtml(p.category)}</td>
-                    <td style="font-family: var(--font-mono); font-weight: 600;">₹${p.sanctioned_amount.toFixed(1)}L</td>
+                    <td><span style="font-size: 12.5px; color: var(--charcoal);">${escapeHtml(p.category)}</span></td>
+                    <td style="font-family: var(--font-mono); font-weight: 600; font-size: 13px;">₹${p.sanctioned_amount.toFixed(1)}L</td>
                     <td>
                         <div style="display: flex; align-items: center; gap: 6px;">
-                            <div style="width: 45px; height: 4px; background: rgba(255,255,255,0.08); border-radius: 100px;">
-                                <div style="width: ${Math.min(p.utilization_pct, 100)}%; height: 100%; background: var(--gradient-primary); border-radius: 100px;"></div>
+                            <div style="width: 48px; height: 5px; background: #e5e5e5; border-radius: 100px; overflow: hidden;">
+                                <div style="width: ${Math.min(p.utilization_pct, 100)}%; height: 100%; background: #FA520F; border-radius: 100px;"></div>
                             </div>
-                            <span style="font-family: var(--font-mono); font-size: 0.75rem;">${p.utilization_pct}%</span>
+                            <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 500;">${p.utilization_pct}%</span>
                         </div>
                     </td>
-                    <td><span class="comp-badge ${compClass}">${p.compliance_status}</span></td>
+                    <td><span class="comp-chip ${compClass}">${p.compliance_status}</span></td>
                     <td><span class="ew-badge ${ewClass}">${p.early_warning_level || 'ON_TRACK'}</span></td>
                     <td><span class="risk-badge ${riskClass}">${p.risk_score.toFixed(0)}</span></td>
-                    <td><a href="/project/${p.id}?role=${currentRole}" class="btn" style="padding: 4px 10px; font-size: 0.75rem;">View →</a></td>
+                    <td><a href="/project/${p.id}?role=${currentRole}" class="button-action">View &rarr;</a></td>
                 </tr>
             `;
         }).join('');
@@ -247,6 +287,7 @@
             .then(alerts => {
                 renderAlertsTable(alerts);
                 updateText('alerts-tab-badge', alerts.length);
+                updateText('mobile-alerts-badge', alerts.length);
             })
             .catch(err => console.error('Alerts error:', err));
     }
@@ -256,7 +297,7 @@
         if (!tbody) return;
 
         if (alerts.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 24px; color: #94a3b8;">✓ No active critical alerts in current jurisdiction.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 32px; color: var(--steel); font-family: var(--font-serif); font-size: 1.1rem;">✓ No active critical alerts in current jurisdiction.</td></tr>`;
             return;
         }
 
@@ -267,21 +308,21 @@
             return `
                 <tr>
                     <td>
-                        <strong>${escapeHtml(a.project_name)}</strong>
-                        <div style="font-size: 0.72rem; color: #ef4444; margin-top: 2px;">
+                        <strong style="color: var(--ink); font-weight: 600;">${escapeHtml(a.project_name)}</strong>
+                        <div style="font-size: 12px; color: var(--primary); margin-top: 3px; font-weight: 500;">
                             ${(a.risk_reasons && a.risk_reasons.length > 0) ? escapeHtml(a.risk_reasons[0]) : ''}
                         </div>
                     </td>
                     <td>${escapeHtml(a.constituency)}</td>
-                    <td><span class="routing-badge">${escapeHtml(a.alert_assigned_to || 'DM')}</span></td>
-                    <td style="font-family: var(--font-mono);">₹${a.sanctioned_amount.toFixed(1)}L</td>
+                    <td><span class="badge-cream">${escapeHtml(a.alert_assigned_to || 'DM')}</span></td>
+                    <td style="font-family: var(--font-mono); font-weight: 600;">₹${a.sanctioned_amount.toFixed(1)}L</td>
                     <td><span class="risk-badge ${riskClass}">${a.risk_score.toFixed(0)}</span></td>
-                    <td><span style="font-size: 0.72rem; color: #f59e0b;">${escapeHtml(compFlag.substring(0, 50))}...</span></td>
+                    <td><span style="font-size: 12px; color: #B45309;">${escapeHtml(compFlag.substring(0, 48))}...</span></td>
                     <td><span class="status-badge ${a.alert_status === 'RESOLVED' ? 'status-completed' : 'status-delayed'}">${a.alert_status}</span></td>
                     <td>
                         <div style="display: flex; gap: 4px;">
-                            <button class="btn-action" onclick="window.dispatchAlertAction(${a.id}, 'ASSIGN_INSPECTION')">🔍 Inspect</button>
-                            <button class="btn-action" onclick="window.dispatchAlertAction(${a.id}, 'RESOLVE')">✓ Resolve</button>
+                            <button class="button-action" onclick="window.dispatchAlertAction(${a.id}, 'ASSIGN_INSPECTION')">🔍 Inspect</button>
+                            <button class="button-action" onclick="window.dispatchAlertAction(${a.id}, 'RESOLVE')">✓ Resolve</button>
                         </div>
                     </td>
                 </tr>
@@ -309,14 +350,14 @@
         .catch(err => alert('Failed to execute alert action.'));
     };
 
-    // ── Map Initialization ──────────────────────────────────────
+    // ── Map Initialization (Mistral Theme) ──────────────────────
     function initMap() {
         const mapEl = document.getElementById('mumbai-map');
         if (!mapEl) return;
 
         map = L.map('mumbai-map').setView([19.076, 72.877], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
         markersLayer = L.layerGroup().addTo(map);
@@ -333,27 +374,27 @@
             .then(data => {
                 data.forEach(p => {
                     if (!p.latitude || !p.longitude) return;
-                    const color = p.risk_score > 60 ? '#ef4444' : (p.risk_score > 30 ? '#f59e0b' : '#10b981');
+                    const color = p.risk_score > 60 ? '#FA520F' : (p.risk_score > 30 ? '#FFA110' : '#10B981');
                     const radius = p.risk_score > 60 ? 8 : (p.risk_score > 30 ? 6 : 5);
 
                     const marker = L.circleMarker([p.latitude, p.longitude], {
                         radius: radius,
                         fillColor: color,
-                        color: color,
-                        weight: 1.5,
-                        opacity: 0.9,
-                        fillOpacity: 0.6
+                        color: '#FFFFFF',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.85
                     });
 
                     marker.bindPopup(`
-                        <div style="min-width: 190px;">
-                            <strong>${escapeHtml(p.project_name)}</strong><br>
-                            <span style="font-size: 0.75rem; color: #94a3b8;">${escapeHtml(p.category)} • ${escapeHtml(p.constituency)}</span>
-                            <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">
-                                <span style="color: ${color}; font-weight: 700;">Score: ${p.risk_score.toFixed(0)}</span> |
-                                <span style="font-size: 0.75rem;">${escapeHtml(p.compliance_status || 'PASSED')}</span>
+                        <div style="min-width: 200px; font-family: var(--font-sans);">
+                            <strong style="color: #1F1F1F; font-size: 13px;">${escapeHtml(p.project_name)}</strong><br>
+                            <span style="font-size: 11.5px; color: #6A6A6A;">${escapeHtml(p.category)} &bull; ${escapeHtml(p.constituency)}</span>
+                            <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid #E5E5E5; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: ${color}; font-weight: 700; font-size: 12px;">AI Risk: ${p.risk_score.toFixed(0)}</span>
+                                <span style="font-size: 11px; font-weight: 600; background: #FFF8E0; padding: 2px 6px; border-radius: 4px;">${escapeHtml(p.compliance_status || 'PASSED')}</span>
                             </div>
-                            <a href="/project/${p.id}?role=${currentRole}" style="color: #67e8f9; font-size: 0.8rem; display: inline-block; margin-top: 6px;">View Full Details →</a>
+                            <a href="/project/${p.id}?role=${currentRole}" style="color: #FA520F; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 8px;">View Details &rarr;</a>
                         </div>
                     `);
                     marker.addTo(markersLayer);
@@ -362,7 +403,7 @@
             .catch(err => console.error('Map fetch error:', err));
     }
 
-    // ── Charts ──────────────────────────────────────────────────
+    // ── Charts (Mistral AI Palette) ─────────────────────────────
     function initCharts() {
         const donutCanvas = document.getElementById('risk-donut-chart');
         if (donutCanvas) {
@@ -372,13 +413,14 @@
                     labels: ['Low Risk', 'Medium Risk', 'High Risk'],
                     datasets: [{
                         data: [110, 10, 8],
-                        backgroundColor: ['rgba(16, 185, 129, 0.85)', 'rgba(245, 158, 11, 0.85)', 'rgba(239, 68, 68, 0.85)'],
-                        borderWidth: 0
+                        backgroundColor: ['#10B981', '#FFA110', '#FA520F'],
+                        borderWidth: 2,
+                        borderColor: '#FFFFFF'
                     }]
                 },
                 options: {
                     responsive: true,
-                    cutout: '70%',
+                    cutout: '72%',
                     plugins: { legend: { display: false } }
                 }
             });
@@ -414,20 +456,26 @@
                         labels: labels,
                         datasets: [
                             {
-                                label: 'Cumulative Completed Works',
-                                data: completed,
-                                borderColor: '#10b981',
-                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                                fill: true,
-                                tension: 0.35
-                            },
-                            {
                                 label: 'Expenditure (₹ Crores)',
                                 data: expenditure,
-                                borderColor: '#6366f1',
-                                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                                borderColor: '#FA520F',
+                                backgroundColor: 'rgba(250, 82, 15, 0.08)',
+                                borderWidth: 2.5,
                                 fill: true,
-                                tension: 0.35
+                                tension: 0.35,
+                                pointBackgroundColor: '#FA520F',
+                                pointRadius: 4
+                            },
+                            {
+                                label: 'Cumulative Completed Works',
+                                data: completed,
+                                borderColor: '#1F1F1F',
+                                backgroundColor: 'rgba(31, 31, 31, 0.04)',
+                                borderWidth: 2,
+                                fill: true,
+                                tension: 0.35,
+                                pointBackgroundColor: '#1F1F1F',
+                                pointRadius: 3
                             }
                         ]
                     },
@@ -436,12 +484,21 @@
                         maintainAspectRatio: false,
                         plugins: {
                             legend: {
-                                labels: { color: '#94a3b8' }
+                                labels: {
+                                    font: { family: 'Inter', size: 12 },
+                                    color: '#4A4A4A'
+                                }
                             }
                         },
                         scales: {
-                            x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
-                            y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }
+                            x: {
+                                grid: { color: '#E5E5E5' },
+                                ticks: { font: { family: 'Inter', size: 11 }, color: '#6A6A6A' }
+                            },
+                            y: {
+                                grid: { color: '#E5E5E5' },
+                                ticks: { font: { family: 'Inter', size: 11 }, color: '#6A6A6A' }
+                            }
                         }
                     }
                 });

@@ -53,7 +53,7 @@ def project_detail(project_id):
     """Detailed drill-down page with compliance checklist, early warning, and auditor action card."""
     project = get_project(project_id)
     if project is None:
-        return render_template('dashboard.html', stats=get_summary_stats(), error='Project not found'), 404
+        return render_template('dashboard.html', stats=get_summary_stats(), kpis=get_kpis_and_audit_metrics(), error='Project not found'), 404
 
     # Parse JSON fields safely
     for field in ['risk_reasons', 'compliance_flags', 'duplicate_flag']:

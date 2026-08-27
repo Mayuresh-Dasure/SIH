@@ -3,33 +3,33 @@
 
 {% block content %}
 <section class="detail-section">
-    <!-- Back button -->
+    <!-- Back to Dashboard Link -->
     <a href="/" class="back-link" id="back-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="19" y1="12" x2="5" y2="12"/>
             <polyline points="12 19 5 12 12 5"/>
         </svg>
-        Back to Dashboard
+        <span>Back to Dashboard</span>
     </a>
 
     <div class="detail-grid">
-        <!-- Left Column: Project Info & Deep Dives -->
+        <!-- Left Column: Main Project Information & Audits -->
         <div class="detail-left">
             <!-- Project Header Card -->
-            <div class="panel detail-info-panel">
+            <div class="card-base detail-info-panel">
                 <div class="detail-header">
                     <div>
-                        <span class="detail-project-id">Work ID: #{{ project.id }}</span>
-                        <h2 class="detail-title">{{ project.project_name }}</h2>
+                        <span class="micro-eyebrow">Work Record #{{ project.id }}</span>
+                        <h1 class="detail-title">{{ project.project_name }}</h1>
                     </div>
                     <div class="detail-status-badges">
                         <span class="status-badge status-{{ project.status|lower|replace(' ', '-') }}">{{ project.status }}</span>
                         {% if project.compliance_status == 'PASSED' %}
-                        <span class="comp-badge comp-badge-pass">✓ Compliant</span>
+                        <span class="badge-cream comp-pass-badge">✓ Compliant</span>
                         {% elif project.compliance_status == 'WARNING' %}
-                        <span class="comp-badge comp-badge-warn">⚠ Compliance Warning</span>
+                        <span class="badge-cream comp-warn-badge">⚠ Warning</span>
                         {% else %}
-                        <span class="comp-badge comp-badge-fail">✕ Compliance Violation</span>
+                        <span class="badge-orange comp-fail-badge">✕ Violation</span>
                         {% endif %}
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                         <span class="meta-value">{{ project.mp_name }}</span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">Constituency & District</span>
-                        <span class="meta-value">{{ project.constituency }} • {{ project.district }}</span>
+                        <span class="meta-label">Constituency &amp; District</span>
+                        <span class="meta-value">{{ project.constituency }} &bull; {{ project.district }}</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Implementing Agency</span>
@@ -57,18 +57,18 @@
 
                 <!-- Financial Details -->
                 <div class="detail-financials">
-                    <h3 class="detail-section-title">Financial Flow & Utilization</h3>
+                    <h3 class="section-subheading">Financial Flow &amp; Fund Utilization</h3>
                     <div class="financial-grid">
-                        <div class="financial-item">
+                        <div class="financial-item card-cream">
                             <span class="financial-label">Sanctioned Amount</span>
-                            <span class="financial-value financial-sanctioned">₹{{ "%.2f"|format(project.sanctioned_amount) }} Lakhs</span>
+                            <span class="financial-value financial-sanctioned">₹{{ "%.2f"|format(project.sanctioned_amount) }} <span class="fund-unit">Lakhs</span></span>
                         </div>
-                        <div class="financial-item">
-                            <span class="financial-label">Expenditure</span>
-                            <span class="financial-value financial-expenditure">₹{{ "%.2f"|format(project.expenditure) }} Lakhs</span>
+                        <div class="financial-item card-cream">
+                            <span class="financial-label">Cumulative Expenditure</span>
+                            <span class="financial-value financial-expenditure">₹{{ "%.2f"|format(project.expenditure) }} <span class="fund-unit">Lakhs</span></span>
                         </div>
-                        <div class="financial-item">
-                            <span class="financial-label">Utilization</span>
+                        <div class="financial-item card-cream">
+                            <span class="financial-label">Utilization Rate</span>
                             <span class="financial-value">{{ project.utilization_pct }}%</span>
                         </div>
                     </div>
@@ -81,9 +81,9 @@
 
                 <hr class="detail-divider">
 
-                <!-- Timeline Details -->
+                <!-- Statutory Timeline -->
                 <div class="detail-timeline">
-                    <h3 class="detail-section-title">Statutory Timeline Audit</h3>
+                    <h3 class="section-subheading">Statutory Timeline Audit</h3>
                     <div class="timeline-grid">
                         <div class="timeline-item">
                             <span class="timeline-label">Recommendation Date</span>
@@ -102,13 +102,22 @@
             </div>
 
             <!-- Statutory Compliance Checklist Card -->
-            <div class="panel compliance-checklist-panel">
-                <h3 class="panel-title">📋 Statutory Compliance Rule Audit</h3>
+            <div class="card-cream compliance-checklist-panel">
+                <div class="panel-header-simple">
+                    <h3 class="panel-heading">Statutory Compliance Rule Audit</h3>
+                    <span class="panel-tag">MoSPI Guidelines</span>
+                </div>
                 <div class="compliance-flags-list">
                     {% for flag in project.compliance_flags %}
                     <div class="compliance-flag-item {% if 'VIOLATION' in flag %}comp-item-fail{% elif 'WARNING' in flag %}comp-item-warn{% else %}comp-item-pass{% endif %}">
-                        <span class="flag-icon">
-                            {% if 'VIOLATION' in flag %}✕{% elif 'WARNING' in flag %}⚠{% else %}✓{% endif %}
+                        <span class="flag-icon" aria-hidden="true">
+                            {% if 'VIOLATION' in flag %}
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FA520F" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            {% elif 'WARNING' in flag %}
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFA110" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            {% else %}
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            {% endif %}
                         </span>
                         <span class="flag-text">{{ flag }}</span>
                     </div>
@@ -117,44 +126,47 @@
             </div>
 
             <!-- Predictive Early Warning Card -->
-            <div class="panel early-warning-panel">
-                <h3 class="panel-title">🔮 Predictive Early Warning Forecast</h3>
+            <div class="card-base early-warning-panel">
+                <div class="panel-header-simple">
+                    <h3 class="panel-heading">Predictive Early Warning Forecast</h3>
+                    <span class="panel-tag">Burn-Rate Velocity</span>
+                </div>
                 <div class="early-warning-grid">
-                    <div class="ew-metric">
-                        <span class="ew-label">Early Warning Level</span>
+                    <div class="card-cream ew-metric-card">
+                        <span class="ew-label">Early Warning Tier</span>
                         <span class="ew-badge ew-{{ project.early_warning_level|lower }}">{{ project.early_warning_level }}</span>
                     </div>
-                    <div class="ew-metric">
-                        <span class="ew-label">Projected Milestone Delay</span>
-                        <span class="ew-value {% if project.predicted_delay_months > 2 %}ew-val-high{% endif %}">
+                    <div class="card-cream ew-metric-card">
+                        <span class="ew-label">Forecast Delay</span>
+                        <span class="ew-value {% if project.predicted_delay_months > 2 %}text-orange{% endif %}">
                             +{{ project.predicted_delay_months }} Months
                         </span>
                     </div>
-                    <div class="ew-metric">
-                        <span class="ew-label">Projected FY Shortfall</span>
-                        <span class="ew-value">₹{{ "%.2f"|format(project.projected_shortfall) }} Lakhs</span>
+                    <div class="card-cream ew-metric-card">
+                        <span class="ew-label">Forecast FY Shortfall</span>
+                        <span class="ew-value">₹{{ "%.2f"|format(project.projected_shortfall) }} L</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Duplicate Works Card (If applicable) -->
+            <!-- Duplicate Works Warning (if detected) -->
             {% if project.duplicate_flag and project.duplicate_flag|length > 0 %}
-            <div class="panel duplicate-warning-panel">
-                <h3 class="panel-title">⚠️ Potential Duplicate / Overlapping Work Detected</h3>
+            <div class="card-cream duplicate-warning-panel">
+                <h3 class="panel-heading text-orange">⚠️ Potential Duplicate / Overlapping Work Detected</h3>
                 {% for dup in project.duplicate_flag %}
                 <div class="dup-alert-box">
-                    <p><strong>Overlapping Project:</strong> <a href="/project/{{ dup.matched_project_id }}">#{{ dup.matched_project_id }} — {{ dup.matched_project_name }}</a></p>
-                    <p><strong>Proximity:</strong> {{ dup.distance_meters }} meters away • <strong>Token Overlap:</strong> {{ dup.similarity_pct }}%</p>
+                    <p><strong>Overlapping Project:</strong> <a href="/project/{{ dup.matched_project_id }}" class="link-orange">#{{ dup.matched_project_id }} &mdash; {{ dup.matched_project_name }}</a></p>
+                    <p><strong>Proximity:</strong> {{ dup.distance_meters }} meters &bull; <strong>Token Similarity:</strong> {{ dup.similarity_pct }}%</p>
                     <span class="dup-reason">{{ dup.reason }}</span>
                 </div>
                 {% endfor %}
             </div>
             {% endif %}
 
-            <!-- Mini Map -->
+            <!-- Geospatial Map -->
             {% if project.latitude and project.longitude %}
-            <div class="panel detail-map-panel">
-                <h3 class="panel-title">Geospatial Site Location</h3>
+            <div class="card-base detail-map-panel">
+                <h3 class="panel-heading">Geospatial Site Coordinates</h3>
                 <div id="detail-map" class="detail-map-container"
                      data-lat="{{ project.latitude }}"
                      data-lng="{{ project.longitude }}"
@@ -165,17 +177,17 @@
 
         <!-- Right Column: AI Risk Score & Auditor Feedback -->
         <div class="detail-right">
-            <!-- AI Risk Score Panel -->
-            <div class="panel risk-assessment-panel">
-                <h3 class="panel-title">AI Risk Intelligence</h3>
+            <!-- AI Risk Score Card -->
+            <div class="card-base risk-assessment-panel">
+                <h3 class="panel-heading">AI Risk Intelligence</h3>
 
                 <!-- Risk Gauge -->
                 <div class="risk-gauge-container">
                     <div class="risk-gauge">
-                        <svg viewBox="0 0 200 120" class="gauge-svg">
+                        <svg viewBox="0 0 200 120" class="gauge-svg" aria-hidden="true">
                             <path d="M 20 100 A 80 80 0 0 1 180 100"
                                   fill="none"
-                                  stroke="rgba(255,255,255,0.08)"
+                                  stroke="#E5E5E5"
                                   stroke-width="12"
                                   stroke-linecap="round"/>
                             <path d="M 20 100 A 80 80 0 0 1 180 100"
@@ -193,7 +205,7 @@
                             <span class="gauge-label">/ 100</span>
                         </div>
                     </div>
-                    <div class="risk-tier-badge" style="background: {{ project.risk_color }}20; color: {{ project.risk_color }}; border: 1px solid {{ project.risk_color }}40;">
+                    <div class="risk-tier-badge" style="background: {{ project.risk_color }}15; color: {{ project.risk_color }}; border: 1px solid {{ project.risk_color }}40;">
                         {{ project.risk_tier }}
                     </div>
                 </div>
@@ -201,11 +213,11 @@
                 <!-- Anomaly Reasons -->
                 {% if project.risk_reasons %}
                 <div class="risk-reasons">
-                    <h4 class="risk-reasons-title">Explainable Anomaly Signals</h4>
+                    <h4 class="reasons-heading">Explainable Anomaly Signals</h4>
                     <ul class="reasons-list">
                         {% for reason in project.risk_reasons %}
                         <li class="reason-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ project.risk_color }}" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ project.risk_color }}" stroke-width="2" aria-hidden="true">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="12" y1="8" x2="12" y2="12"/>
                                 <line x1="12" y1="16" x2="12.01" y2="16"/>
@@ -216,35 +228,38 @@
                     </ul>
                 </div>
                 {% else %}
-                <div class="risk-reasons risk-reasons-clean">
+                <div class="risk-reasons-clean">
                     <div class="clean-badge">
-                        <span>✓ No statistical anomalies detected.</span>
+                        <span>✓ No statistical anomalies detected</span>
                     </div>
                 </div>
                 {% endif %}
             </div>
 
-            <!-- Auditor Ground Feedback Card (Active Learning) -->
-            <div class="panel audit-feedback-panel" id="audit-feedback-card">
-                <h3 class="panel-title">🕵️ Ground Auditor Feedback</h3>
-                <p class="audit-card-sub">Record physical inspection findings to calibrate AI confidence.</p>
+            <!-- Auditor Ground Feedback Card (Mistral Contact Form Panel Style) -->
+            <div class="card-cream audit-feedback-panel" id="audit-feedback-card">
+                <h3 class="panel-heading">Ground Auditor Feedback</h3>
+                <p class="audit-card-sub">Record physical site inspection findings to calibrate AI model precision.</p>
 
                 <div class="feedback-btn-group">
-                    <button class="btn btn-verdict btn-confirm" data-verdict="CONFIRMED">
-                        ✓ Confirm Irregularity
+                    <button class="button-secondary btn-verdict btn-confirm" data-verdict="CONFIRMED">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Confirm Irregularity
                     </button>
-                    <button class="btn btn-verdict btn-false-pos" data-verdict="FALSE_POSITIVE">
-                        ✕ False Positive
+                    <button class="button-secondary btn-verdict btn-false-pos" data-verdict="FALSE_POSITIVE">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        False Positive
                     </button>
-                    <button class="btn btn-verdict btn-review" data-verdict="UNDER_INVESTIGATION">
-                        ⏳ Under Review
+                    <button class="button-secondary btn-verdict btn-review" data-verdict="UNDER_INVESTIGATION">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Under Review
                     </button>
                 </div>
 
                 <div class="feedback-notes-wrapper">
-                    <textarea id="auditor-notes" class="filter-input" rows="3" placeholder="Enter inspection notes or justification..."></textarea>
-                    <button class="btn btn-submit-feedback" id="btn-save-feedback" data-project-id="{{ project.id }}">
-                        Submit Audit Verdict
+                    <textarea id="auditor-notes" class="text-area" rows="3" placeholder="Enter physical inspection observations or remarks..."></textarea>
+                    <button class="button-dark" id="btn-save-feedback" data-project-id="{{ project.id }}">
+                        Submit Inspection Verdict
                     </button>
                 </div>
                 <div id="feedback-result-msg" class="feedback-msg" style="display: none;"></div>
@@ -280,13 +295,13 @@
 
             const map = L.map('detail-map').setView([lat, lng], 15);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap'
+                attribution: '&copy; OpenStreetMap contributors'
             }).addTo(map);
 
             const riskScore = {{ project.risk_score }};
-            let color = '#10b981';
-            if (riskScore > 60) color = '#ef4444';
-            else if (riskScore > 30) color = '#f59e0b';
+            let color = '#10B981';
+            if (riskScore > 60) color = '#FA520F';
+            else if (riskScore > 30) color = '#FFA110';
 
             L.circleMarker([lat, lng], {
                 radius: 10,
@@ -305,9 +320,9 @@
             const totalLength = 251;
             const offset = totalLength - (totalLength * score / 100);
             setTimeout(() => {
-                gaugeFill.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                gaugeFill.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
                 gaugeFill.style.strokeDashoffset = offset;
-            }, 300);
+            }, 200);
         }
 
         // Audit Feedback Handling
