@@ -100,21 +100,26 @@
         const bannerText = document.getElementById('role-banner-text');
         const mpWidget = document.getElementById('mp-entitlement-widget');
         const routingBadge = document.getElementById('routing-current-role');
+        const heroJurisdiction = document.getElementById('hero-jurisdiction-label');
 
         if (role === 'ministry') {
             if (bannerText) bannerText.innerHTML = 'Viewing as <strong>Ministry (MoSPI)</strong> &mdash; Consolidated National &amp; State Portfolio';
+            if (heroJurisdiction) heroJurisdiction.textContent = 'National Oversight • Ministry Portfolio';
             if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: MoSPI Central Vigilance';
         } else if (role === 'state_nodal') {
             if (bannerText) bannerText.innerHTML = 'Viewing as <strong>Maharashtra State Nodal Officer</strong> &mdash; State-Wide Oversight';
+            if (heroJurisdiction) heroJurisdiction.textContent = 'State Oversight • Maharashtra Nodal Office';
             if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: Maharashtra State Nodal';
         } else if (role === 'district_authority') {
             if (bannerText) bannerText.innerHTML = 'Viewing as <strong>District Magistrate (Mumbai Suburban)</strong> &mdash; Sanctions &amp; Audit Queue';
+            if (heroJurisdiction) heroJurisdiction.textContent = 'District Sanctions Queue • Mumbai Suburban';
             if (mpWidget) mpWidget.style.display = 'none';
             if (routingBadge) routingBadge.textContent = 'Routed to: District Planning Authority';
         } else if (role === 'mp') {
             if (bannerText) bannerText.innerHTML = `Viewing as <strong>Honorable MP (${currentMp})</strong> &mdash; Constituency Entitlement Tracker`;
+            if (heroJurisdiction) heroJurisdiction.textContent = `Constituency Portfolio • ${currentMp}`;
             if (mpWidget) mpWidget.style.display = 'block';
             if (routingBadge) routingBadge.textContent = `Routed to: MP Office (${currentMp})`;
         }
